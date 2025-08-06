@@ -1,5 +1,5 @@
 <img width="1918" height="901" alt="greatlearning" src="https://github.com/user-attachments/assets/ff7cc124-11ce-46b3-b481-ccb7dfa003eb" />
-[simplilearn.pdf](https://github.com/user-attachments/files/21613162/simplilearn.pdf)
+<img width="1096" height="775" alt="Screenshot 2025-08-06 130552" src="https://github.com/user-attachments/assets/343f2c16-bdcd-4c4f-af3c-f620cd479278" />
 <img width="1920" height="1080" alt="Screenshot (7)" src="https://github.com/user-attachments/assets/c6ff8de4-1098-48c4-b678-c7945b0a1bd6" />
 <img width="1920" height="1080" alt="Screenshot (8)" src="https://github.com/user-attachments/assets/7acd9d08-f3d4-4a1a-9774-0236c293b192" />
 <img width="1920" height="1080" alt="Screenshot (9)" src="https://github.com/user-attachments/assets/969fd78c-c9f1-4a48-aa94-93339de3452a" />
