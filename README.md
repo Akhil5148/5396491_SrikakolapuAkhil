@@ -21,30 +21,39 @@ Linux Commands
 HackerRank
 
 Plus Minus
+
 <img width="508" height="630" alt="Screenshot 2025-08-11 220124" src="https://github.com/user-attachments/assets/add8936d-64e3-41ca-a160-821cf4ae697d" />
 
 Mini-Max Sum
+
 <img width="499" height="705" alt="Screenshot 2025-08-11 220334" src="https://github.com/user-attachments/assets/5c7e6f04-9758-41f0-bc41-fd17a9e4463d" />
 
 Time Conversion
+
 <img width="739" height="649" alt="Screenshot 2025-08-11 220518" src="https://github.com/user-attachments/assets/50b660b5-c1b9-47e7-965b-975ee684d454" />
 
 Sparse Arrays
+
 <img width="368" height="842" alt="image" src="https://github.com/user-attachments/assets/7616cf80-06de-4958-961f-951cc5674d47" />
 
 Lonely Integer
+
 <img width="720" height="668" alt="image" src="https://github.com/user-attachments/assets/711fec50-cfe3-4533-8082-2fcd0b5eaae5" />
 
 Flipping bits
+
 <img width="770" height="578" alt="image" src="https://github.com/user-attachments/assets/8eb28c83-3018-484c-bbb3-baac16b0fa70" />
 
 Diagonal Difference
+
 <img width="752" height="790" alt="image" src="https://github.com/user-attachments/assets/7e62d74c-e435-4982-abff-cbd142634b7f" />
 
 Counting Sort 1
+
 <img width="647" height="617" alt="image" src="https://github.com/user-attachments/assets/913171de-4bd2-48ac-a1b5-965e34acb125" />
 
 Pangrams
+
 <img width="707" height="787" alt="image" src="https://github.com/user-attachments/assets/3fc7ab5a-1e27-4f94-95db-7c2198291011" />
 
 
