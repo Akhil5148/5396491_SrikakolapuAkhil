@@ -18,6 +18,9 @@ Linux Commands
 <img width="1920" height="1080" alt="Screenshot (17)" src="https://github.com/user-attachments/assets/3d92796b-670c-438f-b307-feb628867df6" />
 <img width="1920" height="1080" alt="Screenshot (18)" src="https://github.com/user-attachments/assets/960c77f0-c761-4600-97cd-822aadcb7770" />
 
+Sololearn
+<img width="1027" height="726" alt="image" src="https://github.com/user-attachments/assets/dae0036e-696a-4636-83ed-78c108f2bea7" />
+
 HackerRank
 
 Plus Minus
