@@ -1,0 +1,74 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
+#define MAX 100001
+
+int visited[MAX];
+int n;
+
+typedef struct Node {
+    int city;
+    struct Node* next;
+} Node;
+
+Node* graph[MAX];
+
+void addEdge(int u, int v) {
+    Node* node = malloc(sizeof(Node));
+    node->city = v;
+    node->next = graph[u];
+    graph[u] = node;
+}
+
+int dfs(int u) {
+    visited[u] = 1;
+    int count = 1;
+    for (Node* ptr = graph[u]; ptr != NULL; ptr = ptr->next) {
+        if (!visited[ptr->city])
+            count += dfs(ptr->city);
+    }
+    return count;
+}
+
+long long roadsAndLibraries(int nCities, long long c_lib, long long c_road) {
+    n = nCities;
+    long long totalCost = 0;
+
+    if (c_lib <= c_road)
+        return (long long)nCities * c_lib;
+
+    for (int i = 1; i <= n; i++) visited[i] = 0;
+
+    for (int i = 1; i <= n; i++) {
+        if (!visited[i]) {
+            int componentSize = dfs(i);
+            totalCost += c_lib + (long long)(componentSize - 1) * c_road;
+        }
+    }
+    return totalCost;
+}
+
+int main() {
+    int q;
+    scanf("%d", &q);
+
+    while (q--) {
+        int m;
+        long long c_lib, c_road;
+        scanf("%d %d %lld %lld", &n, &m, &c_lib, &c_road);
+
+        for (int i = 1; i <= n; i++) graph[i] = NULL;
+        for (int i = 0; i < m; i++) {
+            int u, v;
+            scanf("%d %d", &u, &v);
+            addEdge(u, v);
+            addEdge(v, u);
+        }
+
+        long long ans = roadsAndLibraries(n, c_lib, c_road);
+        printf("%lld\n", ans);
+    }
+
+    return 0;
+}

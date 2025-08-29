@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MAX 100
+
+typedef struct {
+    int x, y, dist;
+} Node;
+
+int minimumMoves(char grid[MAX][MAX], int n, int startX, int startY, int goalX, int goalY) {
+    int visited[MAX][MAX] = {0};
+    Node queue[MAX*MAX];
+    int front = 0, rear = 0;
+    
+    queue[rear++] = (Node){startX, startY, 0};
+    visited[startX][startY] = 1;
+    
+    int dx[] = {-1, 1, 0, 0};
+    int dy[] = {0, 0, -1, 1};
+    
+    while (front < rear) {
+        Node curr = queue[front++];
+        if (curr.x == goalX && curr.y == goalY) return curr.dist;
+        
+        for (int dir = 0; dir < 4; dir++) {
+            int nx = curr.x + dx[dir];
+            int ny = curr.y + dy[dir];
+            
+            while (nx >= 0 && nx < n && ny >= 0 && ny < n && grid[nx][ny] == '.') {
+                if (!visited[nx][ny]) {
+                    visited[nx][ny] = 1;
+                    queue[rear++] = (Node){nx, ny, curr.dist + 1};
+                }
+                nx += dx[dir];
+                ny += dy[dir];
+            }
+        }
+    }
+    return -1; // not reachable
+}
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    char grid[MAX][MAX];
+    for (int i = 0; i < n; i++) {
+        scanf("%s", grid[i]);
+    }
+    int startX, startY, goalX, goalY;
+    scanf("%d %d %d %d", &startX, &startY, &goalX, &goalY);
+    
+    int moves = minimumMoves(grid, n, startX, startY, goalX, goalY);
+    printf("%d\n", moves);
+    
+    return 0;
+}

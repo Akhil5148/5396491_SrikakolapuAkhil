@@ -1,0 +1,54 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <stdbool.h>
+
+#define ALPHABET 10 // letters 'a' to 'j'
+
+typedef struct TrieNode {
+    bool isEnd;
+    struct TrieNode* children[ALPHABET];
+} TrieNode;
+
+TrieNode* createNode() {
+    TrieNode* node = malloc(sizeof(TrieNode));
+    node->isEnd = false;
+    for (int i = 0; i < ALPHABET; i++)
+        node->children[i] = NULL;
+    return node;
+}
+
+bool insertTrie(TrieNode* root, char* word) {
+    TrieNode* curr = root;
+    for (int i = 0; word[i]; i++) {
+        int index = word[i] - 'a';
+        if (!curr->children[index])
+            curr->children[index] = createNode();
+        curr = curr->children[index];
+        if (curr->isEnd) return false; // existing word is prefix
+    }
+    for (int i = 0; i < ALPHABET; i++)
+        if (curr->children[i] != NULL) return false; // word is prefix of existing word
+    curr->isEnd = true;
+    return true;
+}
+
+void noPrefix(int n, char words[][101]) {
+    TrieNode* root = createNode();
+    for (int i = 0; i < n; i++) {
+        if (!insertTrie(root, words[i])) {
+            printf("BAD SET\n%s\n", words[i]);
+            return;
+        }
+    }
+    printf("GOOD SET\n");
+}
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    char words[n][101];
+    for (int i = 0; i < n; i++) scanf("%s", words[i]);
+    noPrefix(n, words);
+    return 0;
+}

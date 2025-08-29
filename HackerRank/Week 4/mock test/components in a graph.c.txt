@@ -1,0 +1,47 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#define MAXN 30001
+
+int adj[MAXN][20], deg[MAXN], vis[MAXN];
+
+int queue[MAXN];
+
+int main() {
+    int n;
+    scanf("%d", &n);
+    int maxnode = 0;
+    for (int i = 0; i < n; i++) {
+        int a, b;
+        scanf("%d %d", &a, &b);
+        adj[a][deg[a]++] = b;
+        adj[b][deg[b]++] = a;
+        if (a > maxnode) maxnode = a;
+        if (b > maxnode) maxnode = b;
+    }
+    int min = 15001, max = 0;
+    for (int i = 1; i <= maxnode; i++) {
+        if (!vis[i] && deg[i]) {
+            int front = 0, back = 0, cnt = 0;
+            queue[back++] = i;
+            vis[i] = 1;
+            while (front < back) {
+                int u = queue[front++];
+                cnt++;
+                for (int j = 0; j < deg[u]; j++) {
+                    int v = adj[u][j];
+                    if (!vis[v]) {
+                        vis[v] = 1;
+                        queue[back++] = v;
+                    }
+                }
+            }
+            if (cnt >= 2) {
+                if (cnt < min) min = cnt;
+                if (cnt > max) max = cnt;
+            }
+        }
+    }
+    printf("%d %d\n", min, max);
+    return 0;
+}
