@@ -1,0 +1,37 @@
+#include stdio.h
+#include stdlib.h
+#include math.h
+
+int isPowerOfTwo(unsigned long long n) {
+    return (n && !(n & (n - 1)));
+}
+
+unsigned long long nextLowerPowerOfTwo(unsigned long long n) {
+    unsigned long long p = 1ULL  (63 - __builtin_clzll(n));
+    return (p == n)  p  p;
+}
+
+char counterGame(unsigned long long n) {
+    int moves = 0;
+    while (n  1) {
+        if (isPowerOfTwo(n)) {
+            n = 1;
+        } else {
+            unsigned long long p = 1ULL  (63 - __builtin_clzll(n));
+            n -= p;
+        }
+        moves++;
+    }
+    return (moves % 2 == 0)  Richard  Louise;
+}
+
+int main() {
+    int t;
+    scanf(%d, &t);
+    while (t--) {
+        unsigned long long n;
+        scanf(%llu, &n);
+        printf(%sn, counterGame(n));
+    }
+    return 0;
+}
